@@ -21,6 +21,11 @@ var BarGraph = (function () {
         console.log('el', el);
         var graph = d3.select(el);
         console.log('graph', graph);
+        //var graph2: any = d3.select(el)
+        //    .attr({ 'class': 'chart' })
+        //    .style({ 'width': '500px,', 'height': '130px' })
+        //    .selectAll('div');
+        //console.log('graph2', graph2);
         this.divs = graph.
             append('div');
         //.

@@ -4,6 +4,7 @@ var del = require('del');
 
 var paths = {
 	scripts: ['App/**/*.js', 'App/**/*.map'],
+	css: ['css/**/*.css'],
 	libs: ['node_modules/angular2/bundles/angular2.js',
 		'node_modules/angular2/bundles/angular2-polyfills.js',
 		'node_modules/systemjs/dist/system.src.js',
@@ -22,4 +23,5 @@ gulp.task('clean', function () {
 
 gulp.task('default', function () {
 	gulp.src(paths.scripts).pipe(gulp.dest('wwwroot/scripts'))
+	gulp.src(paths.css).pipe(gulp.dest('wwwroot/css'))
 });

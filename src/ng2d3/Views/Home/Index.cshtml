@@ -1,21 +1,34 @@
-﻿<script src="scripts/lib/angular2-polyfills.js"></script>
-<script src="scripts/lib/system.src.js"></script>
-<script src="scripts/lib/rx.js"></script>
-<script src="scripts/lib/angular2.js"></script>
-<script src="scripts/lib/d3.js"></script>
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Angular2 and D3 together</title>
+	<link href="css/app.css" rel="stylesheet" />
+	<script src="scripts/lib/angular2-polyfills.js"></script>
+	<script src="scripts/lib/system.src.js"></script>
+	<script src="scripts/lib/rx.js"></script>
+	<script src="scripts/lib/angular2.js"></script>
+	<script src="scripts/lib/d3.js"></script>
 
-<script>
-	System.config({
-		packages: {
-			'scripts': {
-				format: 'cjs',
-				defaultExtension: 'js'
+	<script>
+		System.config({
+			packages: {
+				'scripts': {
+					format: 'cjs',
+					defaultExtension: 'js'
+				}
 			}
-		}
-	});
-	System.import('scripts/main').then(null, console.error.bind(console));
-</script>
+		});
+		System.import('scripts/main').then(null, console.error.bind(console));
+	</script>
+</head>
+<body>
 
-<h1>Index</h1>
-<app>Loading...</app>
+	<h1>Index</h1>
+	<app>Loading...</app>
+</body>
+</html>
+
+
+
 
