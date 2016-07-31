@@ -1,1 +1,19 @@
-﻿<h1>Index</h1>
+﻿<script src="scripts/lib/angular2-polyfills.js"></script>
+<script src="scripts/lib/system.src.js"></script>
+<script src="scripts/lib/rx.js"></script>
+<script src="scripts/lib/angular2.js"></script>
+<script>
+	System.config({
+		packages: {
+			'scripts': {
+				format: 'cjs',
+				defaultExtension: 'js'
+			}
+		}
+	});
+	System.import('scripts/main').then(null, console.error.bind(console));
+</script>
+
+<h1>Index</h1>
+<app>Loading...</app>
+
