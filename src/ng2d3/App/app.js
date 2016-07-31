@@ -9,14 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("angular2/core");
+var BarGraph_1 = require("./BarGraph");
 var app = (function () {
     function app() {
+        console.log("App constructor called");
         this.welcome = "Welcome to ng2";
     }
     app = __decorate([
         core_1.Component({
             selector: 'app',
-            template: '<h2>ng2 says: {{welcome}}'
+            template: "<h2>ng2 says: {{welcome}} \n    <br/>\n    <bar-graph\n    bind-data=\"graphData\"\n    width= \"500\"\n    height=\"130\"\n    >\n    </bar-graph>",
+            directives: [BarGraph_1.BarGraph]
         }), 
         __metadata('design:paramtypes', [])
     ], app);

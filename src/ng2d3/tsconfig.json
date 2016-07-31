@@ -7,7 +7,7 @@
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true
 	},
-	"files": [ "./App/app.ts", "./App./main.ts" ],
+	"files": [ "./App/app.ts", "./App/main.ts", "./App/BarGraph.ts" ],
 
 	"compileOnSave": true,
 

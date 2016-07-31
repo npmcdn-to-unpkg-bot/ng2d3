@@ -1,4 +1,5 @@
-﻿var gulp = require('gulp');
+﻿/// <binding BeforeBuild='clean' AfterBuild='default, lib' />
+var gulp = require('gulp');
 var del = require('del');
 
 var paths = {
@@ -6,7 +7,8 @@ var paths = {
 	libs: ['node_modules/angular2/bundles/angular2.js',
 		'node_modules/angular2/bundles/angular2-polyfills.js',
 		'node_modules/systemjs/dist/system.src.js',
-		'node_modules/rxjs/bundles/Rx.js']
+		'node_modules/rxjs/bundles/Rx.js',
+		'node_modules/d3/build/d3.js']
 };
 
 gulp.task('lib', function () {
