@@ -1,22 +1,16 @@
 ﻿/// <reference path="../typings/globals/d3/index.d.ts" />
 
-
-//import * as angular from 'angular2/angular2';
-import {Component} from 'angular2/core';
+import {Component, OnChanges} from 'angular2/core';
 import {Directive, Attribute, ElementRef} from "angular2/core";
-//import {View, onChange} from "?";
-//import {Inject} from 'angular2/di';
-import * as d3 from 'd3/build/d3';
+import * as x from 'd3';
 
 @Directive({
     selector: 'bar-graph',
-    //lifecycle: [onChange],
     properties: ['data'],
 })
-@Component({
-        bindings: [ElementRef]
-})
-export class BarGraph {
+export class BarGraph
+    //implements OnChanges
+{
     data: Array<number>;
     divs: any;
 
@@ -27,19 +21,44 @@ export class BarGraph {
         console.log("BarGraph constructor is called");
         var el: any = elementRef.nativeElement;
         console.log('el', el);
+
         var graph: any = d3.select(el);
         console.log('graph', graph);
 
         this.divs = graph.
-            append('div').
-            attr({
-                'class': 'chart'
-            }).
-            style({
-                'width': width + 'px',
-                'height': height + 'px',
-            }).
-            selectAll('div');
+            append('div');
+
+            //.
+            //attr({
+            //    'class': 'chart'
+            //});
+
+        console.log('this.divs', this.divs);
+
+        this.divs.attr({ 'class': 'chart' });
+
+        console.log('this.divs 2', this.divs);
+            //.
+            //style({
+            //    'width': width + 'px',
+            //    'height': height + 'px',
+            //}).
+            //selectAll('div');
+
+        //this.divs.style({
+        //    'width': width + 'px',
+        //    'height': height + 'px',
+        //});
+
+        this.divs.style({
+            'width': 500 + 'px',
+            'height': 130 + 'px',
+        });
+
+        console.log('this.divs 3', this.divs);
+
+        this.divs.selectAll('div');
+        console.log('this.divs 4', this.divs);
     }
 
     render(newValue) {
@@ -55,4 +74,8 @@ export class BarGraph {
     onChange() {
         this.render(this.data);
     }
+
+    //ngOnChanges(changes: { [propertyName: string]: any }) {
+    //    this.render(this.data);
+    //}
 }

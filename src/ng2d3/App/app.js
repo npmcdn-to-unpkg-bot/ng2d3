@@ -14,6 +14,7 @@ var app = (function () {
     function app() {
         console.log("App constructor called");
         this.welcome = "Welcome to ng2";
+        this.graphData = [10, 20, 30, 40, 60];
     }
     app = __decorate([
         core_1.Component({

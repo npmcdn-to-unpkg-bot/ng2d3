@@ -15,9 +15,10 @@ import {BarGraph} from "./BarGraph";
 })
 export class app {
     welcome: string;
-
+    graphData: Array<number>;
     constructor() {
         console.log("App constructor called");
         this.welcome = "Welcome to ng2";
+        this.graphData = [10, 20, 30, 40, 60];
     }
 }

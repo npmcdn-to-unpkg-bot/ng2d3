@@ -12,12 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-//import * as angular from 'angular2/angular2';
-var core_1 = require('angular2/core');
-var core_2 = require("angular2/core");
-//import {View, onChange} from "?";
-//import {Inject} from 'angular2/di';
-var d3 = require('d3');
+var core_1 = require("angular2/core");
 var BarGraph = (function () {
     function BarGraph(elementRef, width, height) {
         this.elementRef = elementRef;
@@ -27,15 +22,31 @@ var BarGraph = (function () {
         var graph = d3.select(el);
         console.log('graph', graph);
         this.divs = graph.
-            append('div').
-            attr({
-            'class': 'chart'
-        }).
-            style({
-            'width': width + 'px',
-            'height': height + 'px',
-        }).
-            selectAll('div');
+            append('div');
+        //.
+        //attr({
+        //    'class': 'chart'
+        //});
+        console.log('this.divs', this.divs);
+        this.divs.attr({ 'class': 'chart' });
+        console.log('this.divs 2', this.divs);
+        //.
+        //style({
+        //    'width': width + 'px',
+        //    'height': height + 'px',
+        //}).
+        //selectAll('div');
+        //this.divs.style({
+        //    'width': width + 'px',
+        //    'height': height + 'px',
+        //});
+        this.divs.style({
+            'width': 500 + 'px',
+            'height': 130 + 'px',
+        });
+        console.log('this.divs 3', this.divs);
+        this.divs.selectAll('div');
+        console.log('this.divs 4', this.divs);
     }
     BarGraph.prototype.render = function (newValue) {
         if (!newValue)
@@ -49,17 +60,13 @@ var BarGraph = (function () {
         this.render(this.data);
     };
     BarGraph = __decorate([
-        core_2.Directive({
+        core_1.Directive({
             selector: 'bar-graph',
-            //lifecycle: [onChange],
             properties: ['data'],
         }),
-        core_1.Component({
-            bindings: [core_2.ElementRef]
-        }),
-        __param(1, core_2.Attribute('width')),
-        __param(2, core_2.Attribute('height')), 
-        __metadata('design:paramtypes', [core_2.ElementRef, String, String])
+        __param(1, core_1.Attribute('width')),
+        __param(2, core_1.Attribute('height')), 
+        __metadata('design:paramtypes', [core_1.ElementRef, String, String])
     ], BarGraph);
     return BarGraph;
 }());
