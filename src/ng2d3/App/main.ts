@@ -7,7 +7,7 @@ import {bootstrap} from "angular2/platform/browser";
 //import 'rxjs/add/operator/toPromise';
 
 
-import {app} from "./app";
+import {App} from "./app";
 
 //bootstrap(app, [HTTP_PROVIDERS]);
-bootstrap(app);
+bootstrap(App);

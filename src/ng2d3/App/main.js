@@ -6,5 +6,5 @@ var browser_1 = require("angular2/platform/browser");
 //import 'rxjs/add/operator/toPromise';
 var app_1 = require("./app");
 //bootstrap(app, [HTTP_PROVIDERS]);
-browser_1.bootstrap(app_1.app);
+browser_1.bootstrap(app_1.App);
 //# sourceMappingURL=main.js.map

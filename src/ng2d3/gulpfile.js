@@ -5,6 +5,7 @@ var del = require('del');
 var paths = {
 	scripts: ['App/**/*.js', 'App/**/*.map'],
 	css: ['css/**/*.css'],
+	samples: ['Samples/**/*.js', 'Samples/**/*.html'],
 	libs: ['node_modules/angular2/bundles/angular2.js',
 		'node_modules/angular2/bundles/angular2-polyfills.js',
 		'node_modules/systemjs/dist/system.src.js',
@@ -18,6 +19,10 @@ gulp.task('lib', function () {
 
 gulp.task('clean', function () {
 	return (del(['wwwroot/scripts/**/*']));
+});
+
+gulp.task('samples', function () {
+    gulp.src(paths.samples).pipe(gulp.dest('wwwroot/samples'))
 });
 
 

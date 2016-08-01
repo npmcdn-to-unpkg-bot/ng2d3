@@ -13,7 +13,7 @@ import {BarGraph} from "./BarGraph";
     </bar-graph>`,
     directives: [BarGraph]
 })
-export class app {
+export class App {
     welcome: string;
     graphData: Array<number>;
     constructor() {

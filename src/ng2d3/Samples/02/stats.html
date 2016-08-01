@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+	<script src="/scripts/lib/angular2-polyfills.js"></script>
+	<script src="/scripts/lib/system.src.js"></script>
+	<script src="/scripts/lib/rx.js"></script>
+	<script src="/scripts/lib/angular2.js"></script>
+	<script src="/scripts/lib/d3.js"></script>
+
+	<script>
+		System.config({
+			packages: {
+				'scripts': {
+					format: 'cjs',
+					defaultExtension: 'js'
+				}
+			}
+		});
+		//System.import('stats.js').then(null, console.error.bind(console));
+		System.import('charts/area-chart.js').then(null, console.error.bind(console));
+	</script>
+</head>
+<body>
+	<h1>Angular 2 Chart Component</h1>
+
+	<area-chart *ngIf="areaChartConfig" [config]="areaChartConfig"></area-chart>
+</body>
+</html>

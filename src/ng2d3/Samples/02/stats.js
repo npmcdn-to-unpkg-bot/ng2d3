@@ -8,23 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("angular2/core");
-var BarGraph_1 = require("./BarGraph");
-var App = (function () {
-    function App() {
-        console.log("App constructor called");
-        this.welcome = "Welcome to ng2";
-        this.graphData = [10, 20, 30, 40, 60];
+var core_1 = require('angular2/core');
+//import {StatsService} from './stats.service';
+var Stats = (function () {
+    function Stats() {
+        this.range = 'weekly';
     }
-    App = __decorate([
+    Stats.prototype.ngOnInit = function () {
+    };
+    Stats = __decorate([
         core_1.Component({
-            selector: 'app',
-            template: "<h2>ng2 says: {{welcome}} \n    <br/>\n    <bar-graph\n    bind-data=\"graphData\"\n    width= \"500\"\n    height=\"130\"\n    >\n    </bar-graph>",
-            directives: [BarGraph_1.BarGraph]
+            selector: 'stats',
+            templateUrl: 'app/components/stats/stats.html',
+            styleUrls: ['app/components/stats/stats.css'],
+            //providers: [StatsService],
+            directives: [],
+            pipes: []
         }), 
         __metadata('design:paramtypes', [])
-    ], App);
-    return App;
+    ], Stats);
+    return Stats;
 }());
-exports.App = App;
-//# sourceMappingURL=app.js.map
+exports.Stats = Stats;
+//# sourceMappingURL=stats.js.map

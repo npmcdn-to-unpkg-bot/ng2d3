@@ -13,6 +13,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require("angular2/core");
+var d3 = require('d3');
+//import {select} from 'd3';
 var BarGraph = (function () {
     function BarGraph(elementRef, width, height) {
         this.elementRef = elementRef;
@@ -46,12 +48,13 @@ var BarGraph = (function () {
         //    'height': height + 'px',
         //});
         this.divs.style({
-            'width': 500 + 'px',
-            'height': 130 + 'px',
+            'width': width + 'px',
+            'height': height + 'px',
         });
         console.log('this.divs 3', this.divs);
-        this.divs.selectAll('div');
+        var x = this.divs.selectAll('div');
         console.log('this.divs 4', this.divs);
+        console.log('x', x);
     }
     BarGraph.prototype.render = function (newValue) {
         if (!newValue)

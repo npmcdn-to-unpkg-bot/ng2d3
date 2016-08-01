@@ -2,7 +2,8 @@
 
 import {Component, OnChanges} from 'angular2/core';
 import {Directive, Attribute, ElementRef} from "angular2/core";
-import * as x from 'd3';
+import * as d3 from 'd3';
+//import {select} from 'd3';
 
 @Directive({
     selector: 'bar-graph',
@@ -21,6 +22,7 @@ export class BarGraph
         console.log("BarGraph constructor is called");
         var el: any = elementRef.nativeElement;
         console.log('el', el);
+
 
         var graph: any = d3.select(el);
         console.log('graph', graph);
@@ -58,14 +60,15 @@ export class BarGraph
         //});
 
         this.divs.style({
-            'width': 500 + 'px',
-            'height': 130 + 'px',
+            'width': width + 'px',
+            'height': height + 'px',
         });
 
         console.log('this.divs 3', this.divs);
 
-        this.divs.selectAll('div');
+        var x = this.divs.selectAll('div');
         console.log('this.divs 4', this.divs);
+        console.log('x', x);
     }
 
     render(newValue) {
