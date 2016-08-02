@@ -14,13 +14,15 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 var core_1 = require("angular2/core");
 var d3 = require('d3');
-//import {select} from 'd3';
 var BarGraph = (function () {
-    function BarGraph(elementRef, width, height) {
-        this.elementRef = elementRef;
+    function BarGraph(element, width, height) {
+        this.element = element;
         console.log("BarGraph constructor is called");
-        var el = elementRef.nativeElement;
+        console.log('elementRef', element);
+        var el = element.nativeElement;
         console.log('el', el);
+        //console.log('data', this.data); 
+        console.log('olko_input2', this.olko_input);
         var graph = d3.select(el);
         console.log('graph', graph);
         //var graph2: any = d3.select(el)
@@ -65,12 +67,15 @@ var BarGraph = (function () {
             .text(function (d) { return d + '%'; });
     };
     BarGraph.prototype.onChange = function () {
-        this.render(this.data);
+        //this.render(this.data);
     };
+    __decorate([
+        core_1.Input('dataolko'), 
+        __metadata('design:type', String)
+    ], BarGraph.prototype, "olko_input", void 0);
     BarGraph = __decorate([
         core_1.Directive({
             selector: 'bar-graph',
-            properties: ['data'],
         }),
         __param(1, core_1.Attribute('width')),
         __param(2, core_1.Attribute('height')), 

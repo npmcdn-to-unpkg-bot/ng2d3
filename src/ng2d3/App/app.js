@@ -19,7 +19,7 @@ var App = (function () {
     App = __decorate([
         core_1.Component({
             selector: 'app',
-            template: "<h2>ng2 says: {{welcome}} \n    <br/>\n    <bar-graph\n    bind-data=\"graphData\"\n    width= \"500\"\n    height=\"130\"\n    >\n    </bar-graph>",
+            template: "<h2>ng2 says: {{welcome}} \n    <br/>\n    <bar-graph width= \"500\" height=\"130\" [dataolko]=\"'metelko'\">\n    </bar-graph>",
             directives: [BarGraph_1.BarGraph]
         }), 
         __metadata('design:paramtypes', [])

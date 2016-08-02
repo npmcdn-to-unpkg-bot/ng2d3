@@ -1,28 +1,35 @@
 ﻿/// <reference path="../typings/globals/d3/index.d.ts" />
 
 import {Component, OnChanges} from 'angular2/core';
-import {Directive, Attribute, ElementRef} from "angular2/core";
+import {Directive, Attribute, ElementRef, Input} from "angular2/core";
 import * as d3 from 'd3';
-//import {select} from 'd3';
 
 @Directive({
     selector: 'bar-graph',
-    properties: ['data'],
+    //properties: ['data'],
 })
 export class BarGraph
     //implements OnChanges
 {
-    data: Array<number>;
-    divs: any;
 
-    constructor(private elementRef: ElementRef,
+    divs: any;
+    //@Input('data')
+    //data: Array<number>;
+
+    @Input('dataolko')
+    olko_input: string;
+
+    constructor(private element: ElementRef,
         @Attribute('width') width: string,
         @Attribute('height') height: string) {
 
         console.log("BarGraph constructor is called");
-        var el: any = elementRef.nativeElement;
-        console.log('el', el);
 
+        console.log('elementRef', element);
+        var el: any = element.nativeElement;
+        console.log('el', el);
+        //console.log('data', this.data); 
+        console.log('olko_input2', this.olko_input);
 
         var graph: any = d3.select(el);
         console.log('graph', graph);
@@ -71,6 +78,8 @@ export class BarGraph
         console.log('x', x);
     }
 
+    
+
     render(newValue) {
         if (!newValue) return;
 
@@ -82,7 +91,7 @@ export class BarGraph
     }
 
     onChange() {
-        this.render(this.data);
+        //this.render(this.data);
     }
 
     //ngOnChanges(changes: { [propertyName: string]: any }) {

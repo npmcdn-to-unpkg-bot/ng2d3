@@ -5,11 +5,7 @@ import {BarGraph} from "./BarGraph";
     selector: 'app',
     template: `<h2>ng2 says: {{welcome}} 
     <br/>
-    <bar-graph
-    bind-data="graphData"
-    width= "500"
-    height="130"
-    >
+    <bar-graph width= "500" height="130" [dataolko]="'metelko'">
     </bar-graph>`,
     directives: [BarGraph]
 })

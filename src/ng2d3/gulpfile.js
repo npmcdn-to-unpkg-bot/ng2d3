@@ -5,7 +5,7 @@ var del = require('del');
 var paths = {
 	scripts: ['App/**/*.js', 'App/**/*.map'],
 	css: ['css/**/*.css'],
-	samples: ['Samples/**/*.js', 'Samples/**/*.html'],
+	samples: ['Samples/**/*.js', 'Samples/**/*.html', 'Samples/**/*.css', 'Samples/**/*.ts', 'Samples/**/*.json'],
 	libs: ['node_modules/angular2/bundles/angular2.js',
 		'node_modules/angular2/bundles/angular2-polyfills.js',
 		'node_modules/systemjs/dist/system.src.js',
